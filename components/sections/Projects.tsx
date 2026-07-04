@@ -13,10 +13,25 @@ import { cn } from "@/lib/utils";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-const mockups: Record<string, { variant: "dashboard" | "feed" | "table"; label: string }> = {
-  corelab: { variant: "dashboard", label: "app.corelab.io/dashboard" },
-  connectin: { variant: "feed", label: "connectin.app/feed" },
-  mycinema: { variant: "table", label: "admin.mycinema.fr/planning" },
+const mockups: Record<
+  string,
+  { variant: "dashboard" | "feed" | "table"; label: string; image?: string }
+> = {
+  corelab: {
+    variant: "dashboard",
+    label: "app.corelab.io/dashboard",
+    image: "/projects/corelab.png",
+  },
+  connectin: {
+    variant: "feed",
+    label: "connectin.app/feed",
+    image: "/projects/connectin.png",
+  },
+  mycinema: {
+    variant: "table",
+    label: "admin.mycinema.fr/planning",
+    image: "/projects/mycinema.png",
+  },
 };
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -44,6 +59,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               gradient={project.gradient}
               accent={project.accent}
               label={mockup.label}
+              image={mockup.image}
             />
           </div>
         </TiltCard>

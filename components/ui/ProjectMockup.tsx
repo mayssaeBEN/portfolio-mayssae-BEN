@@ -3,6 +3,7 @@ interface ProjectMockupProps {
   gradient: [string, string];
   accent: string;
   label: string;
+  image?: string;
 }
 
 function DashboardMock({ accent }: { accent: string }) {
@@ -98,7 +99,7 @@ function TableMock({ accent }: { accent: string }) {
   );
 }
 
-export default function ProjectMockup({ variant, gradient, accent, label }: ProjectMockupProps) {
+export default function ProjectMockup({ variant, gradient, accent, label, image }: ProjectMockupProps) {
   return (
     <div className="relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-surface">
       <div className="flex items-center gap-2 border-b border-border bg-surface-2/40 px-4 py-3">
@@ -111,16 +112,25 @@ export default function ProjectMockup({ variant, gradient, accent, label }: Proj
           {label}
         </div>
       </div>
-      <div
-        className="relative flex-1 p-5"
-        style={{
-          background: `linear-gradient(135deg, ${gradient[0]}1f, ${gradient[1]}1f)`,
-        }}
-      >
-        {variant === "dashboard" && <DashboardMock accent={accent} />}
-        {variant === "feed" && <FeedMock accent={accent} />}
-        {variant === "table" && <TableMock accent={accent} />}
-      </div>
+      {image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={image}
+          alt={label}
+          className="h-full w-full flex-1 object-cover object-top"
+        />
+      ) : (
+        <div
+          className="relative flex-1 p-5"
+          style={{
+            background: `linear-gradient(135deg, ${gradient[0]}1f, ${gradient[1]}1f)`,
+          }}
+        >
+          {variant === "dashboard" && <DashboardMock accent={accent} />}
+          {variant === "feed" && <FeedMock accent={accent} />}
+          {variant === "table" && <TableMock accent={accent} />}
+        </div>
+      )}
     </div>
   );
 }
