@@ -66,7 +66,10 @@ export const projects: Project[] = [
       { name: "Vite", icon: SiVite },
     ],
     tags: ["React", "Node.js"],
-    links: { repo: "https://github.com/mayssaeBEN/W-WEB-201-PAR-2-1-corelab-8" },
+    links: {
+      repo: "https://github.com/mayssaeBEN/W-WEB-201-PAR-2-1-corelab-8",
+      demo: "https://client-mocha-omega.vercel.app",
+    },
     accent: "#A78BFA",
     gradient: ["#A78BFA", "#F472B6"],
   },
