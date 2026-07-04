@@ -21,7 +21,7 @@ export const siteConfig = {
   githubUsername: "mayssaeBEN",
   links: {
     github: "https://github.com/mayssaeBEN",
-    linkedin: "https://www.linkedin.com/in/mayssae-bentayeb",
+    linkedin: "https://www.linkedin.com/in/mayssae-bentayeb-091229350",
     email: "mailto:maysabentayeggn@gmail.com",
     phone: "tel:+33767383084",
   },
